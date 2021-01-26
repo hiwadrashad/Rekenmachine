@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rekenmachine.MainPage">
+
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="0" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" x:Name="textvalue"/>
+        </Frame>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="secondClicked"></Button>
+            <Button Text="π" WidthRequest="70" Clicked="piClicked"></Button>
+            <Button Text="e" WidthRequest="70" Clicked="eClicked"></Button>
+            <Button Text="CE" WidthRequest="70" Clicked="ceClicked"></Button>
+            <Button Text="⌫" WidthRequest="70" Clicked="deloneClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="x²" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="squareClicked"></Button>
+            <Button Text="¹/x" WidthRequest="70" Clicked="logClicked"></Button>
+            <Button Text="|x|" WidthRequest="70" Clicked="absClicked"></Button>
+            <Button Text="exp" WidthRequest="70" Clicked="expClicked"></Button>
+            <Button Text="mod" WidthRequest="70" Clicked="modClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="²√x" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="sqrtClicked"></Button>
+            <Button Text="(" WidthRequest="70" Clicked="parenthesisopenClicked"></Button>
+            <Button Text=")" WidthRequest="70" Clicked="parenthesisclosedClicked"></Button>
+            <Button Text="n!" WidthRequest="70" Clicked="factorialClicked"></Button>
+            <Button Text="/" WidthRequest="70" Clicked="divideClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="xʸ" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="exponentClicked"></Button>
+            <Button Text="7" WidthRequest="70" Clicked="sevenClicked"></Button>
+            <Button Text="8" WidthRequest="70" Clicked="eightClicked"></Button>
+            <Button Text="9" WidthRequest="70" Clicked="nineClicked"></Button>
+            <Button Text="X" WidthRequest="70" Clicked="multipliedClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="10ˣ" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="poweroftenClicked"></Button>
+            <Button Text="4" WidthRequest="70" Clicked="fourClicked"></Button>
+            <Button Text="5" WidthRequest="70" Clicked="fiveClicked"></Button>
+            <Button Text="6" WidthRequest="70" Clicked="sixClicked"></Button>
+            <Button Text="-" WidthRequest="70" Clicked="minusClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="log" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="logarithmicClicked"></Button>
+            <Button Text="1" WidthRequest="70" Clicked="oneClicked"></Button>
+            <Button Text="2" WidthRequest="70" Clicked="twoClicked"></Button>
+            <Button Text="3" WidthRequest="70" Clicked="threeClicked"></Button>
+            <Button Text="+" WidthRequest="70" Clicked="plusClicked"></Button>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="iN" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="inClicked"></Button>
+            <Button Text="⁺/₋" WidthRequest="70" Clicked="negateClicked"></Button>
+            <Button Text="0" WidthRequest="70" Clicked="zeroClicked"></Button>
+            <Button Text="." WidthRequest="70" Clicked="decimalClicked"></Button>
+            <Button Text="=" WidthRequest="70" Clicked="calculateClicked"></Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
