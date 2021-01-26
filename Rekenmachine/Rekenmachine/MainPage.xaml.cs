@@ -27,7 +27,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "3.1416";
             }
-            string[] operators = { "+", "-", "x", "/" };
+            string[] operators = { "+", "-", "x", "/","^" };
             if (operators.Any(a => currentvalue.EndsWith(a)))
             {
                 currentvalue = currentvalue + "3.1416";
@@ -42,7 +42,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "2.7183";
             }
-            string[] operators = { "+", "-", "x", "/" };
+            string[] operators = { "+", "-", "x", "/", "^" };
             if (operators.Any(a => currentvalue.EndsWith(a)))
             {
                 currentvalue = currentvalue + "2.7183";
@@ -80,7 +80,7 @@ namespace Rekenmachine
             var currentvalue = textvalue.Text;
             if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
             {
-                string[] operators = { "+", "-", "x", "/" };
+                string[] operators = { "+", "-", "x", "/", "^" };
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
@@ -98,7 +98,7 @@ namespace Rekenmachine
             var currentvalue = textvalue.Text;
             if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
             {
-                string[] operators = { "+", "-", "x", "/" };
+                string[] operators = { "+", "-", "x", "/", "^" };
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
@@ -115,7 +115,7 @@ namespace Rekenmachine
             var currentvalue = textvalue.Text;
             if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
             {
-                string[] operators = { "+", "-", "x", "/" };
+                string[] operators = { "+", "-", "x", "/", "^" };
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
@@ -142,7 +142,7 @@ namespace Rekenmachine
             var currentvalue = textvalue.Text;
             if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
             {
-                string[] operators = { "+", "-", "x", "/" };
+                string[] operators = { "+", "-", "x", "/", "^" };
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
@@ -161,7 +161,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "(";
             }
-            string[] operators = { "+", "-", "x", "/" };
+            string[] operators = { "+", "-", "x", "/", "^" };
             if (operators.Any(a => currentvalue.EndsWith(a)))
             {
                 currentvalue = currentvalue + "(";
@@ -171,72 +171,153 @@ namespace Rekenmachine
         public void parenthesisclosedClicked(object sender, EventArgs e)
         {
             var currentvalue = textvalue.Text;
-            if (currentvalue.StartsWith("0") && currentvalue.Length == 1)
+            if (!(currentvalue.Length == 1))
             {
-                textvalue.Text = "(";
-            }
-            string[] operators = { "+", "-", "x", "/" };
-            if (operators.Any(a => currentvalue.EndsWith(a)))
-            {
-                currentvalue = currentvalue + "(";
-                textvalue.Text = currentvalue;
+
+                string[] operators = { "+", "-", "x", "/", "^" };
+                if (operators.Any(a => currentvalue.EndsWith(a)))
+                {
+                    if (currentvalue.Count(a => a == '(') == (currentvalue.Count(a => a == ')') + 1))
+                    {
+                        currentvalue = currentvalue + ")";
+                        textvalue.Text = currentvalue;
+                    }
+                }
             }
         }
         public void factorialClicked(object sender, EventArgs e)
         {
             var currentvalue = textvalue.Text;
-            if (currentvalue.StartsWith("0") && currentvalue.Length == 1)
+            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
             {
-            }
-            string[] operators = { "+", "-", "x", "/" };
-            if (operators.Any(a => currentvalue.EndsWith(a)))
-            {
-                currentvalue = currentvalue + "(";
-                textvalue.Text = currentvalue;
+                string[] operators = { "+", "-", "x", "/", "^" };
+                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                {
+                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    {
+                        currentvalue = "fact/(" + currentvalue + ")";
+                        textvalue.Text = currentvalue;
+                    }
+                }
             }
         }
         public void divideClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                string[] operators = { "+", "-", "x", "/", "^" };
+                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                {
+                    currentvalue = currentvalue + "/";
+                    textvalue.Text = currentvalue;
+                }
+            }
         }
-
         public void exponentClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                string[] operators = { "+", "-", "x", "/", "^" };
+                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                {
+                    currentvalue = currentvalue + "/";
+                    textvalue.Text = currentvalue;
+                }
+            }
         }
         public void sevenClicked(object sender, EventArgs e)
         {
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "7";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "7";
+                textvalue.Text = currentvalue;
+            }
 
         }
         public void eightClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "8";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "8";
+                textvalue.Text = currentvalue;
+            }
         }
         public void nineClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "9";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "9";
+                textvalue.Text = currentvalue;
+            }
         }
 
         public void multipliedClicked(object sender, EventArgs e)
         {
+            var currentvalue = textvalue.Text;
+            if (!((currentvalue.StartsWith("0") && currentvalue.Length == 1)))
+            {
 
+            }
         }
-
         public void poweroftenClicked(object sender, EventArgs e)
         {
 
         }
         public void fourClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "4";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "4";
+                textvalue.Text = currentvalue;
+            }
         }
         public void fiveClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "5";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "5";
+                textvalue.Text = currentvalue;
+            }
         }
         public void sixClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "6";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "6";
+                textvalue.Text = currentvalue;
+            }
         }
 
         public void minusClicked(object sender, EventArgs e)
@@ -249,15 +330,42 @@ namespace Rekenmachine
         }
         public void oneClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "1";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "1";
+                textvalue.Text = currentvalue;
+            }
         }
         public void twoClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "2";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "2";
+                textvalue.Text = currentvalue;
+            }
         }
         public void threeClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            {
+                textvalue.Text = "3";
+            }
+            if (!currentvalue.EndsWith(")"))
+            {
+                currentvalue = currentvalue + "3";
+                textvalue.Text = currentvalue;
+            }
         }
 
         public void plusClicked(object sender, EventArgs e)
@@ -275,7 +383,16 @@ namespace Rekenmachine
         }
         public void zeroClicked(object sender, EventArgs e)
         {
-
+            var currentvalue = textvalue.Text;
+            if (!(currentvalue.StartsWith("0")))
+            {
+                if (!currentvalue.EndsWith(")"))
+                {
+                    currentvalue = currentvalue + "0";
+                    textvalue.Text = currentvalue;
+                }
+            }
+    
         }
         public void decimalClicked(object sender, EventArgs e)
         {
