@@ -1,4 +1,5 @@
-﻿using System;
+﻿using org.mariuszgromada.math.mxparser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,158 +14,265 @@ namespace Rekenmachine
         public MainPage()
         {
             InitializeComponent(); 
-            Models.Model assignedvalue = new Models.Model()
+            Models.Model assignedValue = new Models.Model()
             {
-                value = "0"
+                Value = "0"
             };
-            BindingContext = assignedvalue;
+            BindingContext = assignedValue;
         }
 
         public void secondClicked(object sender, EventArgs e)
         {
-            //Models.Model assignedvalue = new Models.Model()
+            //Models.Model assignedValue = new Models.Model()
             //{
-            //    value = "This works"
+            //    Value = "This works"
             //};
-            //BindingContext = assignedvalue;
+            //BindingContext = assignedValue;
         }
 
         public void piClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (currentvalue.StartsWith("0") && currentvalue.Length == 1)
+            try
             {
-                textvalue.Text = "3.1416";
-            }
-            string[] operators = { "+", "-", "x", "/","^", "." };
-            if (operators.Any(a => currentvalue.EndsWith(a)))
-            {
-                currentvalue = currentvalue + "3.1416";
-                Models.Model assignedvalue = new Models.Model()
+                var currentValue = textvalue.Text;
+                if (currentValue.StartsWith("0") && currentValue.Length == 1)
                 {
-                    value = currentvalue
+                    textvalue.Text = "3.1416";
+                }
+                string[] operators = { "+", "-", "x", "/", "^", "." };
+                if (operators.Any(a => currentValue.EndsWith(a)))
+                {
+                    currentValue = currentValue + "3.1416";
+                    textvalue.Text = currentValue;
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
 
         public void eClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (currentvalue.StartsWith("0") && currentvalue.Length == 1)
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (currentValue.StartsWith("0") && currentValue.Length == 1)
             {
                 textvalue.Text = "2.7183";
             }
             string[] operators = { "+", "-", "x", "/", "^", "." };
-            if (operators.Any(a => currentvalue.EndsWith(a)))
+            if (operators.Any(a => currentValue.EndsWith(a)))
             {
-                currentvalue = currentvalue + "2.7183";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "2.7183";
+                    textvalue.Text = currentValue;
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
 
         public void ceClicked(object sender, EventArgs e)
         {
-            Models.Model assignedvalue = new Models.Model()
+            try
             {
-                value = "0"
-            };
-            BindingContext = assignedvalue;
+                textvalue.Text = "0";
+                //    Models.Model assignedValue = new Models.Model()
+                //{
+                //        Value = "0"
+                //};
+                //BindingContext = assignedValue;
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
+            }
         }
 
         public void deloneClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
             {
-                if (currentvalue.Length == 1)
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
+            {
+                if (currentValue.Length == 1)
                 {
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = "0"
-                    };
-                    BindingContext = assignedvalue;
+                    textvalue.Text = "0";
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = "0"
+                    //};
+                    //BindingContext = assignedValue;
                 }
                 else
                 {
-                    currentvalue = currentvalue.Remove(currentvalue.Length - 1);
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue.Remove(currentValue.Length - 1);
+                    textvalue.Text = currentValue;
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
                 }
             }
 
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
 
+                BindingContext = assignedValue;
+            }
         }
 
 
         public void squareClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "sqr(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
-                    }
-                }
-            }
+                        currentValue = "sqr(" + currentValue + ")";
+                            textvalue.Text = currentValue;
 
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
+                    }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
+            }
         }
 
         public void logClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "1/(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = "1/(" + currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
 
         public void absClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "abs/(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = "abs/(" + currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
 
@@ -180,443 +288,856 @@ namespace Rekenmachine
 
         public void sqrtClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "√/(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = "√/(" + currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
 
         public void parenthesisopenClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (currentvalue.StartsWith("0") && currentvalue.Length == 1)
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (currentValue.StartsWith("0") && currentValue.Length == 1)
             {
                 textvalue.Text = "(";
             }
             string[] operators = { "+", "-", "x", "/", "^", "." };
-            if (operators.Any(a => currentvalue.EndsWith(a)))
+            if (operators.Any(a => currentValue.EndsWith(a)))
             {
-                currentvalue = currentvalue + "(";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "(";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void parenthesisclosedClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.Length == 1))
+            try
             {
-
-                string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (operators.Any(a => currentvalue.EndsWith(a)))
+                var currentValue = textvalue.Text;
+                if (!(currentValue.Length == 1))
                 {
-                    if (currentvalue.Count(a => a == '(') == (currentvalue.Count(a => a == ')') + 1))
+
+                    string[] operators = { "+", "-", "x", "/", "^", "." };
+                    if (operators.Any(a => currentValue.EndsWith(a)))
                     {
-                        currentvalue = currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
+                        if (currentValue.Count(a => a == '(') == (currentValue.Count(a => a == ')') + 1))
                         {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                            currentValue = currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //    Models.Model assignedValue = new Models.Model()
+                            //    {
+                            //        Value = currentValue
+                            //    };
+                            //    BindingContext = assignedValue;
+                            //}
+                        }
                     }
                 }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void factorialClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "fact/(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = "fact/(" + currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void divideClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    currentvalue = currentvalue + "/";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue + "/";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void exponentClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-           if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+           if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    currentvalue = currentvalue + "/";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue + "/";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
-            } 
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
+            }
         }
         public void sevenClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "7";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "7";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "7";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
 
         }
         public void eightClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "8";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "8";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "8";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void nineClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "9";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "9";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "9";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
 
         public void multipliedClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!((currentvalue.StartsWith("0") && currentvalue.Length == 1)))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!((currentValue.StartsWith("0") && currentValue.Length == 1)))
             {
                 string[] operators = { "+", "-", "x", "/", "^" };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    currentvalue = currentvalue + "x";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue + "x";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void poweroftenClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!((currentvalue.StartsWith("0") && currentvalue.Length == 1)))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!((currentValue.StartsWith("0") && currentValue.Length == 1)))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = currentvalue + "x";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = currentValue + "x";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void fourClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "4";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "4";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "4";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void fiveClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "5";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "5";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "5";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void sixClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "6";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "6";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "6";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
 
         public void minusClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!((currentvalue.StartsWith("0") && currentvalue.Length == 1)))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!((currentValue.StartsWith("0") && currentValue.Length == 1)))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    currentvalue = currentvalue + "-";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue + "-";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void logarithmicClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "log/(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = "log/(" + currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void oneClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "1";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "1";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "1";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void twoClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "2";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "2";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "2";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void threeClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if ((currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 textvalue.Text = "3";
             }
-            if (!currentvalue.EndsWith(")"))
+            if (!currentValue.EndsWith(")"))
             {
-                currentvalue = currentvalue + "3";
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = currentValue + "3";
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
 
         public void plusClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!((currentvalue.StartsWith("0") && currentvalue.Length == 1)))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!((currentValue.StartsWith("0") && currentValue.Length == 1)))
             {
                 string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    currentvalue = currentvalue + "+";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue + "+";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
 
         public void inClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0") && currentvalue.Length == 1))
+            try
+            {
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0") && currentValue.Length == 1))
             {
                 string[] operators = { "+", "-", "x", "/", "^" ,"."};
-                if (!operators.Any(a => currentvalue.EndsWith(a)))
+                if (!operators.Any(a => currentValue.EndsWith(a)))
                 {
-                    if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
+                    if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentvalue = "ln/(" + currentvalue + ")";
-                        Models.Model assignedvalue = new Models.Model()
-                        {
-                            value = currentvalue
-                        };
-                        BindingContext = assignedvalue;
+                        currentValue = "ln/(" + currentValue + ")";
+                            textvalue.Text = currentValue;
+
+                            //Models.Model assignedValue = new Models.Model()
+                            //{
+                            //    Value = currentValue
+                            //};
+                            //BindingContext = assignedValue;
+                        }
                     }
-                }
+            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
             }
         }
         public void negateClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (currentvalue.StartsWith("-"))
+            try
             {
-                currentvalue = currentvalue.Substring(1, currentvalue.Length - 1);
-                textvalue.Text = currentvalue;
+                var currentValue = textvalue.Text;
+            if (currentValue.StartsWith("-"))
+            {
+                currentValue = currentValue.Substring(1, currentValue.Length - 1);
+                textvalue.Text = currentValue;
             }
             else
             {
-                currentvalue = "-" + currentvalue;
-                Models.Model assignedvalue = new Models.Model()
+                currentValue = "-" + currentValue;
+                    textvalue.Text = currentValue;
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = currentValue
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
                 {
-                    value = currentvalue
+                    Value = "Something went wrong"
                 };
-                BindingContext = assignedvalue;
+
+                BindingContext = assignedValue;
             }
         }
         public void zeroClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            if (!(currentvalue.StartsWith("0")))
+            try
             {
-                if (!currentvalue.EndsWith(")"))
+                var currentValue = textvalue.Text;
+            if (!(currentValue.StartsWith("0")))
+            {
+                if (!currentValue.EndsWith(")"))
                 {
-                    currentvalue = currentvalue + "0";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
+                    currentValue = currentValue + "0";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
-    
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
+            }
+
         }
         public void decimalClicked(object sender, EventArgs e)
         {
-            var currentvalue = textvalue.Text;
-            var lastpart = currentvalue.Split(new Char[] {'+','-','x','/','^','(',')' }).LastOrDefault();
+            try
+            {
+                var currentValue = textvalue.Text;
+            var lastpart = currentValue.Split(new Char[] {'+','-','x','/','^','(',')' }).LastOrDefault();
             if (lastpart != null)
             {
                 if (lastpart.Count(a => a == '.') < 1)
                 {
-                    currentvalue = currentvalue + ".";
-                    Models.Model assignedvalue = new Models.Model()
-                    {
-                        value = currentvalue
-                    };
-                    BindingContext = assignedvalue;
-                }
-            };
+                    currentValue = currentValue + ".";
+                        textvalue.Text = currentValue;
+
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
+                };
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
+            }
         }
 
         public void calculateClicked(object sender, EventArgs e)
         {
+            try
+            {
+                var currentValue = textvalue.Text;
+            if ((currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')')))
+            {
+                Expression ex = new Expression (currentValue);
+                var Value = ex.calculate();
 
+                    textvalue.Text = Value.ToString();
+
+
+                    //Models.Model assignedValue = new Models.Model()
+                    //{
+                    //    Value = Value.ToString()
+                    //};
+                    //BindingContext = assignedValue;
+                }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                Models.Model assignedValue = new Models.Model()
+                {
+                    Value = "Something went wrong"
+                };
+
+                BindingContext = assignedValue;
+            }
         }
     }
 }
