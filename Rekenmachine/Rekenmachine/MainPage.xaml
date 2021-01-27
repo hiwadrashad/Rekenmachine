@@ -6,7 +6,7 @@
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="0" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" x:Name="textvalue"/>
+            <Label Text="{Binding value}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" x:Name="textvalue"/>
         </Frame>
         <StackLayout Orientation="Horizontal">
             <Button Text="" HorizontalOptions="Start" WidthRequest="70" HeightRequest="70" Clicked="secondClicked"></Button>

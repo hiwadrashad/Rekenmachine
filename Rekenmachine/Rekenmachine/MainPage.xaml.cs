@@ -12,12 +12,21 @@ namespace Rekenmachine
     {
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            Models.Model assignedvalue = new Models.Model()
+            {
+                value = "0"
+            };
+            BindingContext = assignedvalue;
         }
 
         public void secondClicked(object sender, EventArgs e)
         {
-            textvalue.Text = "this works";
+            //Models.Model assignedvalue = new Models.Model()
+            //{
+            //    value = "This works"
+            //};
+            //BindingContext = assignedvalue;
         }
 
         public void piClicked(object sender, EventArgs e)
@@ -31,7 +40,11 @@ namespace Rekenmachine
             if (operators.Any(a => currentvalue.EndsWith(a)))
             {
                 currentvalue = currentvalue + "3.1416";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
 
@@ -46,13 +59,21 @@ namespace Rekenmachine
             if (operators.Any(a => currentvalue.EndsWith(a)))
             {
                 currentvalue = currentvalue + "2.7183";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
 
         public void ceClicked(object sender, EventArgs e)
         {
-            textvalue.Text = "0";
+            Models.Model assignedvalue = new Models.Model()
+            {
+                value = "0"
+            };
+            BindingContext = assignedvalue;
         }
 
         public void deloneClicked(object sender, EventArgs e)
@@ -62,12 +83,20 @@ namespace Rekenmachine
             {
                 if (currentvalue.Length == 1)
                 {
-                    textvalue.Text = "0";
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = "0"
+                    };
+                    BindingContext = assignedvalue;
                 }
                 else
                 {
                     currentvalue = currentvalue.Remove(currentvalue.Length - 1);
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             }
 
@@ -86,7 +115,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "sqr(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -104,7 +137,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "1/(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -121,7 +158,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "abs/(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -148,7 +189,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "√/(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -165,7 +210,11 @@ namespace Rekenmachine
             if (operators.Any(a => currentvalue.EndsWith(a)))
             {
                 currentvalue = currentvalue + "(";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void parenthesisclosedClicked(object sender, EventArgs e)
@@ -180,7 +229,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == (currentvalue.Count(a => a == ')') + 1))
                     {
                         currentvalue = currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -196,7 +249,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "fact/(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -210,7 +267,11 @@ namespace Rekenmachine
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     currentvalue = currentvalue + "/";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             }
         }
@@ -223,7 +284,11 @@ namespace Rekenmachine
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     currentvalue = currentvalue + "/";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             } 
         }
@@ -237,7 +302,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "7";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
 
         }
@@ -251,7 +320,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "8";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void nineClicked(object sender, EventArgs e)
@@ -264,7 +337,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "9";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
 
@@ -277,7 +354,11 @@ namespace Rekenmachine
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     currentvalue = currentvalue + "x";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             }
         }
@@ -292,7 +373,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = currentvalue + "x";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -307,7 +392,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "4";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void fiveClicked(object sender, EventArgs e)
@@ -320,7 +409,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "5";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void sixClicked(object sender, EventArgs e)
@@ -333,7 +426,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "6";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
 
@@ -346,7 +443,11 @@ namespace Rekenmachine
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     currentvalue = currentvalue + "-";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             }
         }
@@ -361,7 +462,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "log/(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -376,7 +481,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "1";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void twoClicked(object sender, EventArgs e)
@@ -389,7 +498,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "2";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void threeClicked(object sender, EventArgs e)
@@ -402,7 +515,11 @@ namespace Rekenmachine
             if (!currentvalue.EndsWith(")"))
             {
                 currentvalue = currentvalue + "3";
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
 
@@ -415,7 +532,11 @@ namespace Rekenmachine
                 if (!operators.Any(a => currentvalue.EndsWith(a)))
                 {
                     currentvalue = currentvalue + "+";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             }
         }
@@ -431,7 +552,11 @@ namespace Rekenmachine
                     if (currentvalue.Count(a => a == '(') == currentvalue.Count(a => a == ')'))
                     {
                         currentvalue = "ln/(" + currentvalue + ")";
-                        textvalue.Text = currentvalue;
+                        Models.Model assignedvalue = new Models.Model()
+                        {
+                            value = currentvalue
+                        };
+                        BindingContext = assignedvalue;
                     }
                 }
             }
@@ -447,7 +572,11 @@ namespace Rekenmachine
             else
             {
                 currentvalue = "-" + currentvalue;
-                textvalue.Text = currentvalue;
+                Models.Model assignedvalue = new Models.Model()
+                {
+                    value = currentvalue
+                };
+                BindingContext = assignedvalue;
             }
         }
         public void zeroClicked(object sender, EventArgs e)
@@ -458,7 +587,11 @@ namespace Rekenmachine
                 if (!currentvalue.EndsWith(")"))
                 {
                     currentvalue = currentvalue + "0";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             }
     
@@ -472,7 +605,11 @@ namespace Rekenmachine
                 if (lastpart.Count(a => a == '.') < 1)
                 {
                     currentvalue = currentvalue + ".";
-                    textvalue.Text = currentvalue;
+                    Models.Model assignedvalue = new Models.Model()
+                    {
+                        value = currentvalue
+                    };
+                    BindingContext = assignedvalue;
                 }
             };
         }
