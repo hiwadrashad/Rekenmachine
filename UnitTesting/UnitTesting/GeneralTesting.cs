@@ -60,6 +60,5 @@ namespace UnitTesting.UnitTesting
             EventArgs sendargs = new EventArgs();
             NUnit.Framework.Assert.DoesNotThrow(() => item.decimalClicked(sendobject, sendargs));
         }
-
     }
 }

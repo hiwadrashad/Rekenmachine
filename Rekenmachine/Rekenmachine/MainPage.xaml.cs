@@ -23,11 +23,7 @@ namespace Rekenmachine
 
         public void secondClicked(object sender, EventArgs e)
         {
-            //Models.Model assignedValue = new Models.Model()
-            //{
-            //    Value = "This works"
-            //};
-            //BindingContext = assignedValue;
+
         }
 
         public void piClicked(object sender, EventArgs e)
@@ -46,11 +42,7 @@ namespace Rekenmachine
                     {
                         currentValue = currentValue + "3.1416";
                         textvalue.Text = currentValue;
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+
                     }
                 }
             }
@@ -59,12 +51,7 @@ namespace Rekenmachine
 #pragma warning restore CS0168 // Variable is declared but never used
             {
                 textvalue.Text = "Something went wrong";
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -84,11 +71,7 @@ namespace Rekenmachine
                     {
                         currentValue = currentValue + "2.7183";
                         textvalue.Text = currentValue;
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+
                     }
                 }
             }
@@ -98,12 +81,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -112,11 +90,7 @@ namespace Rekenmachine
             try
             {
                 textvalue.Text = "0";
-                //    Models.Model assignedValue = new Models.Model()
-                //{
-                //        Value = "0"
-                //};
-                //BindingContext = assignedValue;
+
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
@@ -124,12 +98,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -143,21 +112,13 @@ namespace Rekenmachine
                 if (currentValue.Length == 1)
                 {
                     textvalue.Text = "0";
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = "0"
-                    //};
-                    //BindingContext = assignedValue;
+
                 }
                 else
                 {
                     currentValue = currentValue.Remove(currentValue.Length - 1);
                     textvalue.Text = currentValue;
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+ 
                 }
             }
 
@@ -168,12 +129,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -193,11 +149,6 @@ namespace Rekenmachine
                         currentValue = "sqr(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
                         }
                     }
             }
@@ -208,12 +159,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -232,11 +178,6 @@ namespace Rekenmachine
                         currentValue = "1/(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
                         }
                     }
             }
@@ -247,12 +188,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
+   
             }
         }
 
@@ -271,11 +207,7 @@ namespace Rekenmachine
                         currentValue = "abs(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
+    
                         }
                     }
             }
@@ -286,12 +218,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -320,11 +247,6 @@ namespace Rekenmachine
                         currentValue = "√(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
                         }
                     }
             }
@@ -335,12 +257,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
+   
             }
         }
 
@@ -359,11 +276,6 @@ namespace Rekenmachine
                 currentValue = currentValue + "(";
                     textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
@@ -372,12 +284,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void parenthesisclosedClicked(object sender, EventArgs e)
@@ -396,12 +303,6 @@ namespace Rekenmachine
                             currentValue = currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //    Models.Model assignedValue = new Models.Model()
-                            //    {
-                            //        Value = currentValue
-                            //    };
-                            //    BindingContext = assignedValue;
-                            //}
                         }
                     }
                 }
@@ -412,12 +313,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void factorialClicked(object sender, EventArgs e)
@@ -435,11 +331,7 @@ namespace Rekenmachine
                         currentValue = "fact(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
+   
                         }
                     }
             }
@@ -450,12 +342,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void divideClicked(object sender, EventArgs e)
@@ -471,11 +358,7 @@ namespace Rekenmachine
                     currentValue = currentValue + "/";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+
                     }
                 }
             }
@@ -485,12 +368,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void exponentClicked(object sender, EventArgs e)
@@ -506,11 +384,7 @@ namespace Rekenmachine
                     currentValue = currentValue + "/";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+     
                     }
                 }
             }
@@ -520,12 +394,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
         }
         public void sevenClicked(object sender, EventArgs e)
@@ -544,11 +412,7 @@ namespace Rekenmachine
                         currentValue = currentValue + "7";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+         
                     }
                 }
             }
@@ -558,12 +422,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
 
         }
@@ -583,11 +442,7 @@ namespace Rekenmachine
                         currentValue = currentValue + "8";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+       
                     }
                 }
             }
@@ -597,12 +452,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void nineClicked(object sender, EventArgs e)
@@ -621,11 +471,7 @@ namespace Rekenmachine
                         currentValue = currentValue + "9";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+
                     }
                 }
             }
@@ -635,12 +481,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -657,11 +498,7 @@ namespace Rekenmachine
                     currentValue = currentValue + "x";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+
                     }
                 }
             }
@@ -671,12 +508,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
         }
         public void poweroftenClicked(object sender, EventArgs e)
@@ -694,11 +525,7 @@ namespace Rekenmachine
                         currentValue = currentValue + "x";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
+
                         }
                     }
             }
@@ -709,12 +536,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void fourClicked(object sender, EventArgs e)
@@ -733,11 +555,7 @@ namespace Rekenmachine
                         currentValue = currentValue + "4";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+
                     }
                 }
             }
@@ -747,12 +565,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
         }
         public void fiveClicked(object sender, EventArgs e)
@@ -771,11 +583,6 @@ namespace Rekenmachine
                         currentValue = currentValue + "5";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
                     }
                 }
             }
@@ -785,12 +592,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void sixClicked(object sender, EventArgs e)
@@ -809,11 +611,6 @@ namespace Rekenmachine
                         currentValue = currentValue + "6";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
                     }
                 }
             }
@@ -823,12 +620,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -845,11 +637,7 @@ namespace Rekenmachine
                     currentValue = currentValue + "-";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+     
                     }
                 }
             }
@@ -859,12 +647,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void logarithmicClicked(object sender, EventArgs e)
@@ -882,11 +665,7 @@ namespace Rekenmachine
                         currentValue = "log(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
+
                         }
                     }
             }
@@ -897,12 +676,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
         public void oneClicked(object sender, EventArgs e)
@@ -921,11 +695,7 @@ namespace Rekenmachine
                         currentValue = currentValue + "1";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+         
                     }
                 }
             }
@@ -935,12 +705,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
+ 
             }
         }
         public void twoClicked(object sender, EventArgs e)
@@ -959,11 +724,6 @@ namespace Rekenmachine
                         currentValue = currentValue + "2";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
                     }
                 }
             }
@@ -973,12 +733,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
+     
             }
         }
         public void threeClicked(object sender, EventArgs e)
@@ -997,11 +752,6 @@ namespace Rekenmachine
                         currentValue = currentValue + "3";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
                     }
                 }
             }
@@ -1011,12 +761,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
 
@@ -1033,11 +778,6 @@ namespace Rekenmachine
                     currentValue = currentValue + "+";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
                     }
                 }
             }
@@ -1047,12 +787,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
         }
 
@@ -1071,11 +805,7 @@ namespace Rekenmachine
                         currentValue = "ln(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
-                            //Models.Model assignedValue = new Models.Model()
-                            //{
-                            //    Value = currentValue
-                            //};
-                            //BindingContext = assignedValue;
+      
                         }
                     }
             }
@@ -1086,12 +816,7 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
+  
             }
         }
         public void negateClicked(object sender, EventArgs e)
@@ -1109,11 +834,6 @@ namespace Rekenmachine
                 currentValue = "-" + currentValue;
                     textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
@@ -1122,12 +842,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
         }
         public void zeroClicked(object sender, EventArgs e)
@@ -1142,11 +856,6 @@ namespace Rekenmachine
                     currentValue = currentValue + "0";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
                     }
                 }
             }
@@ -1156,12 +865,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
 
         }
@@ -1178,11 +881,7 @@ namespace Rekenmachine
                     currentValue = currentValue + ".";
                         textvalue.Text = currentValue;
 
-                        //Models.Model assignedValue = new Models.Model()
-                        //{
-                        //    Value = currentValue
-                        //};
-                        //BindingContext = assignedValue;
+         
                     }
                 };
             }
@@ -1192,12 +891,6 @@ namespace Rekenmachine
             {
                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
-
-                //BindingContext = assignedValue;
             }
         }
 
@@ -1208,17 +901,12 @@ namespace Rekenmachine
                 var currentValue = textvalue.Text;
             if ((currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')')))
             {
+                
                 Expression ex = new Expression (currentValue);
                 var Value = ex.calculate();
 
                     textvalue.Text = Value.ToString();
 
-
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = Value.ToString()
-                    //};
-                    //BindingContext = assignedValue;
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
@@ -1227,12 +915,7 @@ namespace Rekenmachine
             {
                                 textvalue.Text = "Something went wrong";
 
-                //Models.Model assignedValue = new Models.Model()
-                //{
-                //    Value = "Something went wrong"
-                //};
 
-                //BindingContext = assignedValue;
             }
         }
     }
