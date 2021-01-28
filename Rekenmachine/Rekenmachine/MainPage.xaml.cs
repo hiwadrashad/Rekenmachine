@@ -39,28 +39,32 @@ namespace Rekenmachine
                 {
                     textvalue.Text = "3.1416";
                 }
-                string[] operators = { "+", "-", "x", "/", "^", "." };
-                if (operators.Any(a => currentValue.EndsWith(a)))
+                else
                 {
-                    currentValue = currentValue + "3.1416";
-                    textvalue.Text = currentValue;
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                    string[] operators = { "+", "-", "x", "/", "^", "." };
+                    if (operators.Any(a => currentValue.EndsWith(a)))
+                    {
+                        currentValue = currentValue + "3.1416";
+                        textvalue.Text = currentValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
 
-                BindingContext = assignedValue;
+                //BindingContext = assignedValue;
             }
         }
 
@@ -69,32 +73,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if (currentValue.StartsWith("0") && currentValue.Length == 1)
-            {
-                textvalue.Text = "2.7183";
-            }
-            string[] operators = { "+", "-", "x", "/", "^", "." };
-            if (operators.Any(a => currentValue.EndsWith(a)))
-            {
-                currentValue = currentValue + "2.7183";
-                    textvalue.Text = currentValue;
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                if (currentValue.StartsWith("0") && currentValue.Length == 1)
+                {
+                    textvalue.Text = "2.7183";
+                }
+                else
+                {
+                    string[] operators = { "+", "-", "x", "/", "^", "." };
+                    if (operators.Any(a => currentValue.EndsWith(a)))
+                    {
+                        currentValue = currentValue + "2.7183";
+                        textvalue.Text = currentValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -113,12 +122,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -155,12 +166,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -193,12 +206,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -230,12 +245,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -251,7 +268,7 @@ namespace Rekenmachine
                 {
                     if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentValue = "abs/(" + currentValue + ")";
+                        currentValue = "abs(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
                             //Models.Model assignedValue = new Models.Model()
@@ -267,12 +284,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -298,7 +317,7 @@ namespace Rekenmachine
                 {
                     if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentValue = "√/(" + currentValue + ")";
+                        currentValue = "√(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
                             //Models.Model assignedValue = new Models.Model()
@@ -314,12 +333,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -349,12 +370,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void parenthesisclosedClicked(object sender, EventArgs e)
@@ -387,12 +410,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void factorialClicked(object sender, EventArgs e)
@@ -407,7 +432,7 @@ namespace Rekenmachine
                 {
                     if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentValue = "fact/(" + currentValue + ")";
+                        currentValue = "fact(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
                             //Models.Model assignedValue = new Models.Model()
@@ -423,12 +448,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void divideClicked(object sender, EventArgs e)
@@ -456,12 +483,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void exponentClicked(object sender, EventArgs e)
@@ -489,12 +518,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void sevenClicked(object sender, EventArgs e)
@@ -502,32 +533,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "7";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "7";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "7";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "7";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
 
         }
@@ -536,32 +572,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "8";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "8";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "8";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "8";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void nineClicked(object sender, EventArgs e)
@@ -569,32 +610,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "9";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "9";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "9";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "9";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -623,12 +669,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void poweroftenClicked(object sender, EventArgs e)
@@ -659,12 +707,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void fourClicked(object sender, EventArgs e)
@@ -672,32 +722,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "4";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "4";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "4";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "4";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void fiveClicked(object sender, EventArgs e)
@@ -705,32 +760,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "5";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "5";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "5";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "5";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void sixClicked(object sender, EventArgs e)
@@ -738,32 +798,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "6";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "6";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "6";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "6";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -792,12 +857,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void logarithmicClicked(object sender, EventArgs e)
@@ -812,7 +879,7 @@ namespace Rekenmachine
                 {
                     if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentValue = "log/(" + currentValue + ")";
+                        currentValue = "log(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
                             //Models.Model assignedValue = new Models.Model()
@@ -828,12 +895,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void oneClicked(object sender, EventArgs e)
@@ -841,32 +910,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "1";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "1";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "1";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "1";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void twoClicked(object sender, EventArgs e)
@@ -874,32 +948,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "2";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "2";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "2";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "2";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void threeClicked(object sender, EventArgs e)
@@ -907,32 +986,37 @@ namespace Rekenmachine
             try
             {
                 var currentValue = textvalue.Text;
-            if ((currentValue.StartsWith("0") && currentValue.Length == 1))
-            {
-                textvalue.Text = "3";
-            }
-            if (!currentValue.EndsWith(")"))
-            {
-                currentValue = currentValue + "3";
-                    textvalue.Text = currentValue;
+                if ((currentValue.StartsWith("0") && currentValue.Length == 1))
+                {
+                    textvalue.Text = "3";
+                }
+                else
+                {
+                    if (!currentValue.EndsWith(")"))
+                    {
+                        currentValue = currentValue + "3";
+                        textvalue.Text = currentValue;
 
-                    //Models.Model assignedValue = new Models.Model()
-                    //{
-                    //    Value = currentValue
-                    //};
-                    //BindingContext = assignedValue;
+                        //Models.Model assignedValue = new Models.Model()
+                        //{
+                        //    Value = currentValue
+                        //};
+                        //BindingContext = assignedValue;
+                    }
                 }
             }
 #pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -961,12 +1045,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -982,7 +1068,7 @@ namespace Rekenmachine
                 {
                     if (currentValue.Count(a => a == '(') == currentValue.Count(a => a == ')'))
                     {
-                        currentValue = "ln/(" + currentValue + ")";
+                        currentValue = "ln(" + currentValue + ")";
                             textvalue.Text = currentValue;
 
                             //Models.Model assignedValue = new Models.Model()
@@ -998,12 +1084,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void negateClicked(object sender, EventArgs e)
@@ -1032,12 +1120,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
         public void zeroClicked(object sender, EventArgs e)
@@ -1064,12 +1154,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
 
         }
@@ -1098,12 +1190,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
 
@@ -1131,12 +1225,14 @@ namespace Rekenmachine
             catch (Exception ex)
 #pragma warning restore CS0168 // Variable is declared but never used
             {
-                Models.Model assignedValue = new Models.Model()
-                {
-                    Value = "Something went wrong"
-                };
+                                textvalue.Text = "Something went wrong";
 
-                BindingContext = assignedValue;
+                //Models.Model assignedValue = new Models.Model()
+                //{
+                //    Value = "Something went wrong"
+                //};
+
+                //BindingContext = assignedValue;
             }
         }
     }
